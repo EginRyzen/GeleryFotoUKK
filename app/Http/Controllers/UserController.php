@@ -47,7 +47,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/home');
+        return redirect('/galery');
     }
 
     public function postLogin(Request $request)

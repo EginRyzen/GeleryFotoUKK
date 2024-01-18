@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\GaleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,4 @@ use App\Http\Controllers\UserController;
 Route::resource('/', UserController::class);
 Route::post('postlogin', [UserController::class, 'postLogin']);
 
-
-Route::get('/home', function () {
-    return 'sudah login anda';
-});
+Route::resource('galery', GaleryController::class);
