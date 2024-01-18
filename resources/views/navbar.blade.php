@@ -33,7 +33,7 @@
                                         class="img-size-50 mr-3 img-circle">
                                     <div class="media-body">
                                         <h3 class="dropdown-item-title">
-                                            Brad Diesel
+                                            {{ Auth::user()->name }}
                                             <span class="float-right text-sm text-danger"><i
                                                     class="fa fa-edit"></i></span>
                                         </h3>
