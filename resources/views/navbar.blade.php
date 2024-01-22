@@ -10,10 +10,10 @@
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="javacsript:;" type="button" class="nav-link" data-toggle="modal"
-                            data-target="#modal-default">Upload Image <span></span><i class="fas fa-upload"></i></a>
+                            data-target="#modal-default">Upload Image <span> </span><i class="fas fa-upload"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link">Foto</a>
                     </li>
                 </ul>
 
@@ -43,7 +43,7 @@
                                 <!-- Message End -->
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item dropdown-footer">Log Out</a>
+                            <a href="{{ url('logout') }}" class="dropdown-item dropdown-footer">Log Out</a>
                         </div>
                     </li>
                 </ul>
@@ -58,13 +58,26 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="">
+                    <form action="{{ url('galery') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="modal-body">
-                            <input type="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="judul" placeholder="Judul">
+                            </div>
+                            <div class="form-group">
+                                <textarea type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" cols="10" rows="6"></textarea>
+
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="foto" id="uploadImage">
+                            </div>
+                            <div class="form-group">
+                                <img id="previewImage" style="max-width: 100%; max-height: 200px;" />
+                            </div>
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>
                     </form>
                 </div>

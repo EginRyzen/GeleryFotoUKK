@@ -14,6 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+
+        if ($user) {
+            return back();
+        }
         return view('login');
     }
 
@@ -65,10 +70,17 @@ class UserController extends Controller
         $data = $request->only('email', 'password');
 
         if (Auth::attempt($data)) {
-            return redirect('/home');
+            return redirect('/galery');
         } else {
             return back()->with('alert', 'Authentication failed. Please check your credentials.');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/');
     }
 
     /**

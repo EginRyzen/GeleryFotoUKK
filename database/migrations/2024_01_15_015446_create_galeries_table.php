@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('galeries', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('iduser');
-            $table->date('tanggal');
+            $table->dateTime('tanggal')->nullable();
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('foto');

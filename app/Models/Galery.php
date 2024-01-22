@@ -13,7 +13,6 @@ class Galery extends Model
     protected $fillable = [
         'iduser',
         'tanggal',
-        'tanggal',
         'judul',
         'deskripsi',
         'foto',
