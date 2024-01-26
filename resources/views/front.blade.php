@@ -66,7 +66,7 @@
                 var reader = new FileReader();
                 reader.onload = function() {
                     preview.attr('src', reader.result);
-                };
+                }
 
                 if (input.files.length > 0) {
                     reader.readAsDataURL(input.files[0]);

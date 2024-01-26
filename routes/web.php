@@ -21,6 +21,10 @@ use App\Http\Controllers\UserController;
 
 Route::resource('/', UserController::class);
 Route::post('postlogin', [UserController::class, 'postLogin']);
-Route::get('logout', [UserController::class, 'logout']);
 
-Route::resource('galery', GaleryController::class);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('logout', [UserController::class, 'logout']);
+
+    Route::resource('galery', GaleryController::class);
+});
